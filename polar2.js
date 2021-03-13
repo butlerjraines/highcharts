@@ -5,12 +5,14 @@ var testdata3 = {
       {
         y: 30,
         color: '#1DACE8',
-        name: '1a'
+        name: '1a',
+        label: 'hey'
       },
       {
         y: 20,
         color: '#1C366B',
-        name: '2b'
+        name: '2b',
+        offset:-20
       },
       {
         y: 35,
@@ -25,8 +27,11 @@ var testdata3 = {
       {
         y: 95,
         color: '#C4CFD0',
-        name: '5e'
-      }
+        name: '5e',
+        selected: true
+      
+      },
+     
     ]
   }
   
@@ -37,7 +42,8 @@ var testdata3 = {
       {
         y: 30,
         color: '#1DACE8',
-        name: 'a'
+        name: 'a',
+     
       },
       {
         y: 30,
@@ -62,7 +68,7 @@ var testdata3 = {
     ]
   }
   
-  Highcharts.chart('container', {
+  let chart4 = Highcharts.chart('container4', {
   
     chart: {
       type: 'column',
@@ -70,13 +76,13 @@ var testdata3 = {
     },
   
     pane: [{
-      center: ['25%', '20%'],
-      size: 150,
+      center: ['25%', '25%'],
+      size: 200,
       startAngle: 0,
-      endAngle: 360
+      endAngle: 360,
     }, {
-      center: ['55%', '20%'],
-      size: 150,
+      center: ['50%', '25%'],
+      size: 200,
       startAngle: 0,
       endAngle: 360
     }],
@@ -84,18 +90,19 @@ var testdata3 = {
     yAxis: [{
       pane: 0,
     }, {
-      pane: 1,
+      pane: 1
     }],
     
     xAxis: [{
       pane: 0,
-      tickInterval: 45,
+      tickInterval: 72,
       min: 0,
       max: 360,
-      labels: false
+      //labels: true,
+      
     }, {
       pane: 1,
-      tickInterval: 45,
+      tickInterval: 36,
       min: 0,
       max: 360,
       labels: false
@@ -104,14 +111,17 @@ var testdata3 = {
     plotOptions: {
       series: {
         pointStart: 0,
-        pointInterval: 45,
-        pointPlacement: 'between'
+        //this ishow much space the colors take up
+        pointInterval: 72,
+        pointPlacement: 'between',
+        //allowPointSelect: true,
+        //slicedOffset: 20
       },
       column: {
         pointPadding: 0,
         groupPadding: 0,
         grouping: false
-      }
+      },
     },
   
     series: [{

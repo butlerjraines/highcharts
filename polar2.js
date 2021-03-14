@@ -73,6 +73,7 @@ var testdata3 = {
     chart: {
       type: 'column',
       polar: true,
+      showAxes: true
     },
   
     pane: [{
@@ -98,7 +99,11 @@ var testdata3 = {
       tickInterval: 72,
       min: 0,
       max: 360,
-      //labels: true,
+     
+      labels: {
+          align: 'left',
+       
+      }
       
     }, {
       pane: 1,

@@ -1,0 +1,51 @@
+
+
+body {
+    font-family: "Open Sans";
+}
+
+#main {
+    margin: 10px 20px;
+}
+
+text {
+    text-anchor: middle;
+    font-size: 12px;
+    fill: #555;
+    font-family: sans-serif;
+}
+
+text.names {
+    font-size: 20px;
+    text-anchor: start;
+}
+
+.axis {
+    transform-origin: top;
+}
+
+.axis text {
+    fill: #555;
+}
+
+.axis line,
+.axis path {
+    stroke: #555;
+}
+
+text.title {
+    text-anchor: middle;
+    font-size: 14px;
+    fill: #333;
+}
+
+circle {
+    fill: #006bb3;
+    opacity: 0.5;
+}
+
+.good {
+    fill: #ff9900;
+    stroke: #555;
+    stroke-width: 0.2;
+}

@@ -1,13 +1,9 @@
 
-
-
 let chart6 = Highcharts.chart('container6',
 
 
 
     {
-
-
 
 
         chart: {
@@ -28,11 +24,19 @@ let chart6 = Highcharts.chart('container6',
             //pane 1
             startAngle: 72,
             endAngle: 144
-        }],
+        },
+        {
+            //pane2
+            startAngle: 144,
+            endAngle: 216
+        }
+
+
+        ],
 
 
         xAxis: [{
-              //pane 0  
+            //pane 0  
             pane: 0,
             tickInterval: 36,
             min: 0,
@@ -45,7 +49,7 @@ let chart6 = Highcharts.chart('container6',
             }
         },
         {
-    //pane 1
+            //pane 1
             pane: 1,
             tickInterval: 36,
             min: 0,
@@ -56,33 +60,28 @@ let chart6 = Highcharts.chart('container6',
                     return this.value + '°';
                 }
             }
-        }],
+        },
+        {
+            //pane 1
+            pane: 2,
+            tickInterval: 144,
+            min: 0,
+            //x axis for this pain
+            max: 144,
+            labels: {
+                formatter: function () {
+                    return this.value + '°';
+                }
+            }
+        }
+
+        ],
 
         yAxis: {
             min: 0,
             // tickInterval: 50,
-            max: 300,
+            max: 400,
             showEmpty: true,
-            plotBands: [{
-                from: 0,
-                to: 50,
-                color: 'red'
-            }, {
-                from: 50,
-                to: 100,
-                color: '#EFA867'
-            }, {
-                from: 100,
-                to: 150,
-                color: '#247D7E'
-            }, {
-                from: 150,
-                to: 200,
-                color: '#E1E9E0'
-            }
-
-            ]
-
 
         },
 
@@ -100,11 +99,30 @@ let chart6 = Highcharts.chart('container6',
         },
 
         series: [{
+            pane: 0,
             type: 'column',
             name: 'Column',
-            data: [300, 7, 6, 5, 4,],
-            yAxis: 0,
-            xAxis: 0,
-        }]
+            data: [300, 180, 80, 200, 500],
+     
+        },
+
+        {
+           pane: 1,
+            type: 'column',
+            name: 'Column',
+            data: [0,0,0,100,120,0,200],
+            //xAxis: 90,
+        },
+    
+        {
+           // pane: 2,
+            type: 'column',
+            name: 'Column',
+            data: [0,0,0,0,0,0,0, 80, 120, 360],
+            //xAxis: 90,
+        }
+    
+    ]
 
     });
+
